@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Отчетность ученика</title>
-    <!-- Подключаем Bootstrap -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -14,22 +13,21 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
-    <script src="https://cdn.lordicon.com/lordicon.js"></script>
     <style>
       body {
         background-color: #fffffff7;
       }
       .card .card-img {
-        height: 100%; /* Заполнить высоту изображения до 100% высоты родительского блока */
-        object-fit: cover; /* Масштабирование изображения, чтобы оно полностью покрывало контейнер */
+        height: 100%;
+        object-fit: cover;
       }
       .card {
-        border: 1px solid #ddd; /* добавляем границу */
-        border-radius: 10px; /* скругляем углы */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* добавляем тень */
-        transition: box-shadow 0.3s ease; /* плавное изменение тени */
-        height: 200px; /* установка высоты карточек */
-        overflow: hidden; /* Скрыть изображения, которые выходят за границы карточек */
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s ease;
+        height: 200px;
+        overflow: hidden;
         border-radius: 15px;
       }
 
@@ -38,30 +36,30 @@
       }
 
       .card:hover {
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* увеличиваем тень при наведении */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
       }
 
       .card-header {
         background-color: #007bff;
         color: #fff;
-        border-top-left-radius: 10px; /* скругляем углы верхнего левого угла */
-        border-top-right-radius: 10px; /* скругляем углы верхнего правого угла */
-        padding: 10px; /* добавляем внутренний отступ */
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        padding: 10px;
       }
 
       .card-body {
-        padding: 20px; /* добавляем внутренний отступ */
+        padding: 20px;
       }
       .round-avatar {
-        width: 40px; /* Ширина иконки */
-        height: 40px; /* Высота иконки */
-        border-radius: 50%; /* Задаем скругленные углы, чтобы создать круглую форму */
-        margin-right: 10px; /* Отступ справа от иконки перед текстом */
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 10px;
         border: 1px solid #007bff;
       }
       .myflex {
         display: flex;
-        align-items: center; /* Выравниваем элементы по вертикали */
+        align-items: center;
         background-color: antiquewhite;
         border-radius: 15px;
         padding: 10px;
@@ -77,27 +75,11 @@
         </h3>
       </div>
       <img
+        class="img-fluid mx-auto d-block"
         id="carouselExampleSlidesOnly"
         src="../Media/Group 13.svg"
         alt="Avatar"
       />
-      <!-- <div
-        id="carouselExampleSlidesOnly"
-        class="carousel slide"
-        data-bs-ride="carousel"
-      >
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="/Group 38.svg" class="d-block w-100" alt="..." />
-          </div>
-          <div class="carousel-item">
-            <img src="/Group 13.svg" class="d-block w-100" alt="..." />
-          </div>
-          <div class="carousel-item">
-            <img src="/hi.gif" class="d-block w-100" alt="..." />
-          </div>
-        </div>
-      </div> -->
       <div class="info">
         <h5 class="mb-4 myflex">
           <img class="round-avatar" src="../Media/Frame 36.svg" alt="Avatar" />
@@ -127,7 +109,7 @@
     </div>
 
     <script>
-      // Список приветствий на разных языках
+      // Печатание слова привет на разных языках
       var greetings = [
         "привет",
         "bonjour",
@@ -138,7 +120,6 @@
         "どうも",
       ];
 
-      // Интервал времени между печатанием каждой буквы (в миллисекундах)
       var typingInterval = 150;
 
       // Функция для печати текста с эффектом машинного печатающего устройства
@@ -150,7 +131,6 @@
             index++;
           } else {
             clearInterval(intervalId);
-            // Задержка перед стиранием текста
             setTimeout(function () {
               eraseTextWithEffect(element);
             }, typingInterval);
@@ -185,9 +165,8 @@
       // Начать процесс с печати первого приветствия
       var initialGreetingIndex = Math.floor(Math.random() * greetings.length);
       printTextWithEffect(greetings[initialGreetingIndex], greetingElement);
-    </script>
 
-    <script>
+      // Главная страница
       var currentMode = "months"; // Режим по умолчанию: месяцы
       var currentMonthData; // Данные для текущего месяца
       var sortedData; // Отсортированные данные по месяцам
@@ -225,9 +204,9 @@
           "03",
           "04",
           "05",
-        ]; // Порядок месяцев
+        ];
+        // Порядок месяцев
         var monthIndexes = {
-          // Индексы месяцев для нового порядка
           "09": 0,
           10: 1,
           11: 2,
@@ -289,6 +268,7 @@
         var html = "";
 
         var sortedMonths = Object.keys(data).sort(compareMonths); // Сортируем месяцы
+
         // Создаем объект с ссылками на фотографии для каждого месяца
         var monthImages = {
           "09": "../Media/3840bac02bba19ca9bdb72d91ae75ddc.gif",
@@ -300,7 +280,6 @@
           "03": "../Media/bg_77.gif",
           "04": "../Media/bg_79.gif",
           "05": "../Media/CWN.gif",
-          // Добавьте остальные месяцы здесь
         };
 
         // В цикле используем этот объект для отображения фотографии для каждого месяца
@@ -338,6 +317,7 @@
             row[1] +
             "</p>"; // Дата
           html += "<p class='card-text'>" + row[3] + "</p>"; // Комментарий
+
           // Проверяем наличие ссылки на скачивание
           if (row[4]) {
             // Если ссылка есть, создаем кнопку с иконкой
@@ -349,7 +329,7 @@
               "<path fill-rule='evenodd' d='M14 4.5V14a2 2 0 0 1-2 2h-1v-1h1a1 1 0 0 0 1-1V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v9H2V2a2 2 0 0 1 2-2h5.5zM1.6 11.85H0v3.999h.791v-1.342h.803q.43 0 .732-.173.305-.175.463-.474a1.4 1.4 0 0 0 .161-.677q0-.375-.158-.677a1.2 1.2 0 0 0-.46-.477q-.3-.18-.732-.179m.545 1.333a.8.8 0 0 1-.085.38.57.57 0 0 1-.238.241.8.8 0 0 1-.375.082H.788V12.48h.66q.327 0 .512.181.185.183.185.522m1.217-1.333a.8.8 0 0 1-.085.38.57.57 0 0 1-.238.241.8.8 0 0 1-.375.082H.788V12.48h.66q.327 0 .512.181.185.183.185.522m1.217-1.333v3.999h1.46q.602 0 .998-.237a1.45 1.45 0 0 0 .595-.689q.196-.45.196-1.084 0-.63-.196-1.075a1.43 1.43 0 0 0-.589-.68q-.396-.234-1.005-.234zm.791.645h.563q.371 0 .609.152a.9.9 0 0 1 .354.454q.118.302.118.753a2.3 2.3 0 0 1-.068.592 1.1 1.1 0 0 1-.196.422.8.8 0 0 1-.334.252 1.3 1.3 0 0 1-.483.082h-.563zm3.743 1.763v1.591h-.79V11.85h2.548v.653H7.896v1.117h1.606v.638z'/>" +
               "</svg>" +
               "Скачать" +
-              "</a>"; // ПДФ с скачиванием
+              "</a>"; // Скачивание файла pdf
           } else {
             // Если ссылки нет, просто добавляем текст без кнопки
             html += "<span class='card-link'>" + row[4] + "</span>";
@@ -412,6 +392,7 @@
       }
 
       // Загрузка данных из CSV файла и отображение на странице
+
       // Функция для чтения CSV файла
       function readCSV(url, callback) {
         var xhr = new XMLHttpRequest();
@@ -457,7 +438,7 @@
       // Загрузка данных из CSV файла и отображение на странице
       readCSV("../updated_data.csv", function (csvData) {
         var rows = parseCSV(csvData);
-        var filteredData = filterData(rows, "Саша"); // Замените "Имя Ученика" на имя конкретного ученика
+        var filteredData = filterData(rows, "Саша");
         sortedData = sortDataByMonth(filteredData);
         displayMonths(sortedData); // Отображаем карточки с месяцами при загрузке страницы
       });

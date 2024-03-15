@@ -72,13 +72,13 @@
     <div class="container mt-4">
       <div class="info">
         <h3 class="mb-4 myflex">
-          <img class="round-avatar" src="Media/Frame 35.svg" alt="Avatar" />
+          <img class="round-avatar" src="../Media/Frame 35.svg" alt="Avatar" />
           Святослав, <span id="greeting"> </span>
         </h3>
       </div>
       <img
         id="carouselExampleSlidesOnly"
-        src="Media/Group 13.svg"
+        src="../Media/Group 13.svg"
         alt="Avatar"
       />
       <!-- <div
@@ -100,7 +100,7 @@
       </div> -->
       <div class="info">
         <h5 class="mb-4 myflex">
-          <img class="round-avatar" src="Media/Frame 36.svg" alt="Avatar" />
+          <img class="round-avatar" src="../Media/Frame 36.svg" alt="Avatar" />
           Отчётность
         </h5>
       </div>
@@ -291,15 +291,15 @@
         var sortedMonths = Object.keys(data).sort(compareMonths); // Сортируем месяцы
         // Создаем объект с ссылками на фотографии для каждого месяца
         var monthImages = {
-          "09": "Media/3840bac02bba19ca9bdb72d91ae75ddc.gif",
-          10: "Media/bg_80.gif",
-          11: "Media/bg_87.gif",
-          12: "Media/bg_73.gif",
-          "01": "Media/image_processing20210730-13842-od4q27.gif",
-          "02": "Media/bg_74.gif",
-          "03": "Media/bg_77.gif",
-          "04": "Media/bg_79.gif",
-          "05": "Media/CWN.gif",
+          "09": "../Media/3840bac02bba19ca9bdb72d91ae75ddc.gif",
+          10: "../Media/bg_80.gif",
+          11: "../Media/bg_87.gif",
+          12: "../Media/bg_73.gif",
+          "01": "../Media/image_processing20210730-13842-od4q27.gif",
+          "02": "../Media/bg_74.gif",
+          "03": "../Media/bg_77.gif",
+          "04": "../Media/bg_79.gif",
+          "05": "../Media/CWN.gif",
           // Добавьте остальные месяцы здесь
         };
 
@@ -455,7 +455,7 @@
       }
 
       // Загрузка данных из CSV файла и отображение на странице
-      readCSV("updated_data.csv", function (csvData) {
+      readCSV("../updated_data.csv", function (csvData) {
         var rows = parseCSV(csvData);
         var filteredData = filterData(rows, "Святослав"); // Замените "Имя Ученика" на имя конкретного ученика
         sortedData = sortDataByMonth(filteredData);

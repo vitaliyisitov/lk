@@ -13,6 +13,10 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <!-- Обычный фавикон -->
     <link rel="icon" href="../Media/favicon.svg" type="image/x-icon" />
     <!-- Фавикон для устройств Apple -->
@@ -86,6 +90,27 @@
         border-radius: 15px;
         padding: 10px;
       }
+      .swiper {
+        width: 100%;
+        height: 20%;
+        border-radius: 15px;
+      }
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
     </style>
   </head>
   <body>
@@ -96,12 +121,26 @@
           Святослав, <span id="greeting"> </span>
         </h3>
       </div>
-      <img
+      <!-- <img
         class="img-fluid mx-auto d-block"
         id="carouselExampleSlidesOnly"
         src="../Media/Group 13.svg"
         alt="Avatar"
-      />
+      /> -->
+      <div id="carouselExampleSlidesOnly">
+        <!-- Swiper -->
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="../Media/Group 13.svg" alt="news1" />
+            </div>
+            <div class="swiper-slide">
+              <img src="../Media/Group 38.svg" alt="news2" />
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
       <div class="info">
         <h5 class="mb-4 myflex">
           <img class="round-avatar" src="../Media/Frame 36.svg" alt="Avatar" />
@@ -129,7 +168,19 @@
       </button>
       <div id="studentData" class="row"></div>
     </div>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 30,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      });
+    </script>
     <script>
       // Печатание слова привет на разных языках
       var greetings = [
@@ -229,15 +280,15 @@
         ];
         // Порядок месяцев
         var monthIndexes = {
-          "09": 0,
-          10: 1,
-          11: 2,
-          12: 3,
+          "05": 0,
+          "04": 1,
+          "03": 2,
+          "02": 3,
           "01": 4,
-          "02": 5,
-          "03": 6,
-          "04": 7,
-          "05": 8,
+          12: 5,
+          11: 6,
+          10: 7,
+          "09": 8,
         };
 
         data.forEach(function (row) {
@@ -266,7 +317,7 @@
       function compareMonths(a, b) {
         const indexA = getMonthIndex(a);
         const indexB = getMonthIndex(b);
-        return indexA - indexB;
+        return indexB - indexA;
       }
 
       // Функция для получения индекса месяца в новом порядке

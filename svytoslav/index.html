@@ -327,6 +327,7 @@
       function displayLessons(data) {
         currentMonthData = data; // Сохраняем данные текущего месяца
         var studentDataDiv = document.getElementById("studentData");
+        var backButton = document.getElementById("backBtn");
         var html = "";
 
         data.forEach(function (row) {
@@ -362,7 +363,6 @@
           html += "</div>";
         });
 
-        var backButton = document.getElementById("backBtn");
         backButton.classList.remove("d-none"); // Показываем кнопку "назад"
         var infoElements = document.querySelectorAll(".info");
         infoElements.forEach(function (infoElement) {
@@ -373,6 +373,8 @@
         );
         carouselExampleSlidesOnly.classList.add("d-none"); // добавляем баннер
         studentDataDiv.innerHTML = html;
+        // Прокручиваем карточки с занятиями к верху контейнера studentData
+        backButton.scrollIntoView({ behavior: "smooth", block: "start" });
       }
 
       // Функция для отображения данных на странице

@@ -153,9 +153,43 @@
         height: 100%;
         object-fit: cover;
       }
+      /* styles.css */
+      #preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+      }
+
+      .spinner {
+        width: 50px;
+        height: 50px;
+        border: 5px solid #cccccc;
+        border-top-color: #1a1a1a;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
     </style>
   </head>
   <body>
+    <div id="preloader">
+      <div class="spinner"></div>
+    </div>
     <div class="container mt-4">
       <div class="info">
         <h1 class="mb-4 myflex-title">
@@ -225,6 +259,11 @@
 
     <!-- Initialize Swiper -->
     <script>
+      // script.js
+      window.addEventListener("load", function () {
+        var preloader = document.getElementById("preloader");
+        preloader.style.display = "none";
+      });
       var swiper = new Swiper(".mySwiper", {
         spaceBetween: 30,
         pagination: {
@@ -345,7 +384,7 @@
           12: "../Media/Frame 4.svg",
           "01": "../Media/Frame 3.svg",
           "02": "../Media/Frame 2.svg",
-          "03": "../Media/Frame 1.svg",
+          "03": "../Media/mart.png",
           "04": "../Media/apr.png",
           "05": "../Media/may.png",
         };

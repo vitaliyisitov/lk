@@ -63,12 +63,12 @@
       }
       @media (max-width: 1400px) {
         .card {
-          border-radius: 20px; /* Меньший радиус скругления углов */
+          border-radius: 20px;
         }
       }
       @media (max-width: 768px) {
         .card {
-          border-radius: 15px; /* Меньший радиус скругления углов */
+          border-radius: 10px;
         }
       }
       .mycard {
@@ -112,16 +112,26 @@
       }
       .myflex-text {
         border-radius: 15px;
-        padding: 10px;
+        padding: 10px 30px;
         background-color: #f8f8f8;
         display: flex;
         justify-content: center;
         align-items: center;
       }
+      @media (max-width: 1400px) {
+        .myflex-text {
+          font-size: medium;
+        }
+      }
+      @media (max-width: 768px) {
+        .myflex-text {
+          font-size: small;
+        }
+      }
       .swiper {
         width: 100%;
         height: 20%;
-        border-radius: 30px;
+        border-radius: 15px;
       }
 
       .swiper-slide {
@@ -142,7 +152,7 @@
     </style>
   </head>
   <body>
-    <div class="container mt-5">
+    <div class="container mt-4">
       <div class="info">
         <h1 class="mb-4 myflex-title">
           <img class="round-avatar" src="../Media/avatar.svg" alt="Avatar" />
@@ -151,8 +161,9 @@
       </div>
       <div class="info">
         <h5 class="mt-1 myflex-text">
-          Добро пожаловать в личный кабинет. Тут ты сможешь увидеть важные
-          новости и просмотреть отчетную информацию <br />по нашим занятиям
+          Добро пожаловать в личный кабинет! Тут ты сможешь увидеть важные
+          новости и просмотреть статистику по месяцам, а также скачать записи с
+          занятий в формате pdf
         </h5>
       </div>
       <div class="info">

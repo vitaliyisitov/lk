@@ -40,23 +40,37 @@
     <meta property="og:url" content="https://vitaliyisitov.me/lk/svytoslav" />
     <meta property="og:image" content="../Media/Preview.png" />
     <style>
+      @font-face {
+        font-family: "Zekton";
+        src: url("../Media/zekton\ rg.ttf");
+      }
       body {
-        background-color: #fffffff7;
+        font-family: "Zekton";
+        background-image: url(../Media/back1.png);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
       }
       .card .card-img {
-        height: 100%;
         object-fit: cover;
       }
       .card {
-        border: 1px solid #ddd;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 8px rgba(253, 253, 253, 0.1);
+        border: none;
         transition: box-shadow 0.3s ease;
-        height: 200px;
         overflow: hidden;
-        border-radius: 15px;
+        border-radius: 30px;
       }
-
+      @media (max-width: 1400px) {
+        .card {
+          border-radius: 20px; /* Меньший радиус скругления углов */
+        }
+      }
+      @media (max-width: 768px) {
+        .card {
+          border-radius: 15px; /* Меньший радиус скругления углов */
+        }
+      }
       .mycard {
         height: 100%;
       }
@@ -77,29 +91,43 @@
         padding: 20px;
       }
       .round-avatar {
-        width: 40px;
-        height: 40px;
+        width: 60px;
+        height: 60px;
         border-radius: 50%;
         margin-right: 10px;
-        border: 1px solid #007bff;
       }
       .myflex {
         display: flex;
         align-items: center;
-        background-color: antiquewhite;
         border-radius: 15px;
         padding: 10px;
+        color: rgba(248, 248, 248, 0.3);
+      }
+      .myflex-title {
+        display: flex;
+        align-items: center;
+        border-radius: 15px;
+        padding: 10px;
+        color: white;
+      }
+      .myflex-text {
+        border-radius: 15px;
+        padding: 10px;
+        background-color: #f8f8f8;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
       .swiper {
         width: 100%;
         height: 20%;
-        border-radius: 15px;
+        border-radius: 30px;
       }
 
       .swiper-slide {
         text-align: center;
         font-size: 18px;
-        background: #fff;
+        background-color: radial-gradient(#505050, #353535);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -114,12 +142,21 @@
     </style>
   </head>
   <body>
-    <div class="container mt-4">
+    <div class="container mt-5">
       <div class="info">
-        <h3 class="mb-4 myflex">
-          <img class="round-avatar" src="../Media/Frame 35.svg" alt="Avatar" />
-          Святослав, <span id="greeting"> </span>
-        </h3>
+        <h1 class="mb-4 myflex-title">
+          <img class="round-avatar" src="../Media/avatar.svg" alt="Avatar" />
+          ПРИВЕТ, СВЯТОСЛАВ
+        </h1>
+      </div>
+      <div class="info">
+        <h5 class="mt-1 myflex-text">
+          Добро пожаловать в личный кабинет. Тут ты сможешь увидеть важные
+          новости и просмотреть отчетную информацию <br />по нашим занятиям
+        </h5>
+      </div>
+      <div class="info">
+        <h5 class="mt-4 myflex">/новости</h5>
       </div>
       <!-- <img
         class="img-fluid mx-auto d-block"
@@ -132,24 +169,24 @@
         <div class="swiper mySwiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <img src="../Media/Group 13.svg" alt="news1" />
+              <img src="../Media/banner.svg" alt="news1" />
             </div>
             <div class="swiper-slide">
-              <img src="../Media/Group 38.svg" alt="news2" />
+              <img src="../Media/banner.svg" alt="news1" />
             </div>
+            <!-- <div class="swiper-slide">
+              <img src="../Media/Group 38.svg" alt="news2" />
+            </div> -->
           </div>
           <div class="swiper-pagination"></div>
         </div>
       </div>
       <div class="info">
-        <h5 class="mb-4 myflex">
-          <img class="round-avatar" src="../Media/Frame 36.svg" alt="Avatar" />
-          Отчётность
-        </h5>
+        <h5 class="mt-4 myflex">/отчётность</h5>
       </div>
       <button
         id="backBtn"
-        class="btn btn-outline-dark d-none mb-4 d-flex align-items-center"
+        class="btn btn-outline-light d-none mb-4 d-flex align-items-center"
         onclick="showMonths()"
       >
         <svg
@@ -182,63 +219,6 @@
       });
     </script>
     <script>
-      // Печатание слова привет на разных языках
-      var greetings = [
-        "привет",
-        "bonjour",
-        "hola",
-        "ciao",
-        "你好",
-        "hello",
-        "どうも",
-      ];
-
-      var typingInterval = 150;
-
-      // Функция для печати текста с эффектом машинного печатающего устройства
-      function printTextWithEffect(text, element) {
-        var index = 0;
-        var intervalId = setInterval(function () {
-          if (index < text.length) {
-            element.innerHTML += text.charAt(index);
-            index++;
-          } else {
-            clearInterval(intervalId);
-            setTimeout(function () {
-              eraseTextWithEffect(element);
-            }, typingInterval);
-          }
-        }, typingInterval);
-      }
-
-      // Функция для стирания текста с эффектом
-      function eraseTextWithEffect(element) {
-        var text = element.innerHTML;
-        var index = text.length - 1;
-        var intervalId = setInterval(function () {
-          if (index >= 0) {
-            element.innerHTML = text.substring(0, index);
-            index--;
-          } else {
-            clearInterval(intervalId);
-            // Выбор нового приветствия после стирания
-            var randomIndex = Math.floor(Math.random() * greetings.length);
-            var greeting = greetings[randomIndex];
-            // Задержка перед печатью нового приветствия
-            setTimeout(function () {
-              printTextWithEffect(greeting, element);
-            }, typingInterval);
-          }
-        }, typingInterval);
-      }
-
-      // Найти элемент, в который нужно напечатать приветствие
-      var greetingElement = document.getElementById("greeting");
-
-      // Начать процесс с печати первого приветствия
-      var initialGreetingIndex = Math.floor(Math.random() * greetings.length);
-      printTextWithEffect(greetings[initialGreetingIndex], greetingElement);
-
       // Главная страница
       var currentMode = "months"; // Режим по умолчанию: месяцы
       var currentMonthData; // Данные для текущего месяца
@@ -344,28 +324,28 @@
 
         // Создаем объект с ссылками на фотографии для каждого месяца
         var monthImages = {
-          "09": "../Media/3840bac02bba19ca9bdb72d91ae75ddc.gif",
-          10: "../Media/bg_80.gif",
-          11: "../Media/bg_87.gif",
-          12: "../Media/bg_73.gif",
-          "01": "../Media/image_processing20210730-13842-od4q27.gif",
-          "02": "../Media/bg_74.gif",
-          "03": "../Media/bg_77.gif",
-          "04": "../Media/bg_79.gif",
-          "05": "../Media/CWN.gif",
+          "09": "../Media/Frame 8.svg",
+          10: "../Media/Frame 7.svg",
+          11: "../Media/Frame 5.svg",
+          12: "../Media/Frame 4.svg",
+          "01": "../Media/Frame 3.svg",
+          "02": "../Media/Frame 2.svg",
+          "03": "../Media/Frame 1.svg",
+          "04": "../Media/apr.png",
+          "05": "../Media/may.png",
         };
 
         // В цикле используем этот объект для отображения фотографии для каждого месяца
         sortedMonths.forEach(function (month) {
           html +=
-            "<div class='col-lg-4 mb-4' onclick='showLessons(" +
+            "<div class='col-4 col-lg-3 mb-4' onclick='showLessons(" +
             JSON.stringify(data[month]) +
             ")'>";
-          html += "<div class='card bg-dark text-white'>";
+          html += "<div class='card text-white'>";
           html +=
             "<img src='" + monthImages[month] + "' class='card-img' alt=''>";
           html += "<div class='card-img-overlay'>";
-          html += "<h5 class='card-title'>" + getMonthName(month) + "</h5>";
+          // html += "<h5 class='card-title'>" + getMonthName(month) + "</h5>";
           html += "</div>";
           html += "</div>";
           html += "</div>";

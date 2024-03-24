@@ -40,7 +40,7 @@
       <div class="info">
         <h1 class="mb-4 myflex-title">
           <img class="round-avatar" src="../Media/avatar.svg" alt="Avatar" />
-          ПРИВЕТ, АЛЕКСАНДР
+          ПРИВЕТ, АЛЕКСАНДРА
         </h1>
       </div>
       <div class="info">
@@ -420,7 +420,7 @@
       // Загрузка данных из CSV файла и отображение на странице
       readCSV("../updated_data.csv", function (csvData) {
         var rows = parseCSV(csvData);
-        var filteredData = filterData(rows, "Саша");
+        var filteredData = filterData(rows, "Александра");
         sortedData = sortDataByMonth(filteredData);
         displayMonths(sortedData); // Отображаем карточки с месяцами при загрузке страницы
       });

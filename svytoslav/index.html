@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Личный кабинет</title>
 
-    <link href="../Media/bootstrap.min.css" rel="stylesheet" />
-    <script src="../Media/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="../Media/swiper-bundle.min.css" />
-
+    <link href="../Assets/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../Assets/swiper-bundle.min.css" />
+    <link href="../Assets/style.css" rel="stylesheet" />
+    <script src="../Assets/bootstrap.bundle.min.js"></script>
+    <script src="../Assets/script_banner.js"></script>
     <link rel="icon" href="../Media/favicon.svg" type="image/x-icon" />
-
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -31,178 +31,6 @@
     />
     <meta property="og:url" content="https://vitaliyisitov.me/lk/svytoslav" />
     <meta property="og:image" content="../Media/Preview.png" />
-    <style>
-      @font-face {
-        font-family: "Zekton";
-        src: url("../Media/zekton\ rg.ttf");
-      }
-      body {
-        font-family: "Zekton";
-        background-image: url(../Media/back1.png);
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-      }
-      .card .card-img {
-        object-fit: cover;
-      }
-      .card {
-        box-shadow: 0 4px 8px rgba(253, 253, 253, 0.1);
-        border: none;
-        transition: box-shadow 0.3s ease;
-        overflow: hidden;
-        border-radius: 30px;
-      }
-      @media (max-width: 1400px) {
-        .card {
-          border-radius: 20px;
-        }
-      }
-      @media (max-width: 768px) {
-        .card {
-          border-radius: 10px;
-        }
-      }
-      .mycard {
-        height: 100%;
-      }
-
-      .card:hover {
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-      }
-
-      .card-header {
-        background-color: #007bff;
-        color: #fff;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-        padding: 10px;
-      }
-
-      .card-body {
-        padding: 20px;
-      }
-      .round-avatar {
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        margin-right: 10px;
-      }
-      .myflex {
-        display: flex;
-        align-items: center;
-        border-radius: 15px;
-        padding: 10px;
-        color: rgba(248, 248, 248, 0.3);
-      }
-      .myflex-title {
-        display: flex;
-        align-items: center;
-        border-radius: 15px;
-        padding: 10px;
-        color: white;
-      }
-      .myflex-text {
-        border-radius: 15px;
-        padding: 10px 30px;
-        background-color: #f8f8f8;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      @media (max-width: 1400px) {
-        .myflex-text {
-          font-size: medium;
-        }
-      }
-      @media (max-width: 768px) {
-        .myflex-text {
-          font-size: small;
-        }
-      }
-      .myflex-text-footer {
-        padding: 0 0 0 15px;
-        display: flex;
-        flex-direction: column;
-        color: rgba(248, 248, 248, 0.3);
-        border-left: 10px solid rgba(248, 248, 248, 0.6);
-      }
-      @media (max-width: 1400px) {
-        .myflex-text-footer {
-          font-size: medium;
-        }
-      }
-      @media (max-width: 768px) {
-        .myflex-text-footer {
-          font-size: small;
-        }
-      }
-      .swiper {
-        width: 100%;
-        height: 20%;
-        border-radius: 15px;
-      }
-
-      .swiper-slide {
-        text-align: center;
-        font-size: 18px;
-        background-color: radial-gradient(#505050, #353535);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .swiper-slide img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      /* styles.css */
-      #preloader {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #ffffff;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 9999;
-      }
-      .loader {
-        width: 48px;
-        height: 48px;
-        border-radius: 50%;
-        display: inline-block;
-        position: relative;
-        border: 2px solid rgba(61, 173, 255, 1);
-        box-sizing: border-box;
-        animation: rotation 1s linear infinite;
-      }
-      .loader::after {
-        content: "";
-        box-sizing: border-box;
-        position: absolute;
-        left: 4px;
-        top: 4px;
-        border: 2px solid #fff;
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-      }
-
-      @keyframes rotation {
-        0% {
-          transform: rotate(0deg);
-        }
-        100% {
-          transform: rotate(360deg);
-        }
-      }
-    </style>
   </head>
   <body>
     <div id="preloader">
@@ -234,17 +62,7 @@
       <div id="carouselExampleSlidesOnly">
         <!-- Swiper -->
         <div class="swiper mySwiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <img src="../Media/banner.svg" alt="news1" />
-            </div>
-            <div class="swiper-slide">
-              <img src="../Media/banner.svg" alt="news1" />
-            </div>
-            <!-- <div class="swiper-slide">
-              <img src="../Media/Group 38.svg" alt="news2" />
-            </div> -->
-          </div>
+          <div class="swiper-wrapper"></div>
           <div class="swiper-pagination"></div>
         </div>
       </div>
@@ -274,8 +92,20 @@
       <div id="studentData" class="row"></div>
       <div class="info">
         <h5 class="mb-5 mt-5 myflex-text-footer">
-          ВИТАЛИЙ ИСИТОВ - репетитор по математике и информатике
-          <a style="text-decoration: none" href="https://t.me/isitovv">
+          <span style="color: white"
+            >ВИТАЛИЙ ИСИТОВ
+            <span style="color: rgba(248, 248, 248, 0.3)"
+              >- репетитор по математике и информатике</span
+            ></span
+          >
+          <!-- <a
+            style="
+              text-decoration: none;
+              display: inline-block;
+              vertical-align: baseline;
+            "
+            href="https://t.me/isitovv"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -283,13 +113,14 @@
               fill="currentColor"
               class="bi bi-telegram"
               viewBox="0 0 16 16"
+              style="vertical-align: baseline"
             >
               <path
                 d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.287 5.906q-1.168.486-4.666 2.01-.567.225-.595.442c-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294q.39.01.868-.32 3.269-2.206 3.374-2.23c.05-.012.12-.026.166.016s.042.12.037.141c-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8 8 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629q.14.092.27.187c.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.4 1.4 0 0 0-.013-.315.34.34 0 0 0-.114-.217.53.53 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09"
               />
             </svg>
             isitovv
-          </a>
+          </a> -->
         </h5>
       </div>
     </div>
@@ -457,7 +288,8 @@
         data.forEach(function (row) {
           html += "<div class='col-lg-4 mb-4'>";
           html += "<div class='card mycard'>";
-          html += "<div class='card-body'>";
+          html += "<div class='card-body d-flex flex-column'>"; // Используем flexbox
+
           html += "<h5 class='card-title'>" + row[2] + "</h5>"; // Предмет
           html +=
             "<p class='card-subtitle mb-2 text-body-secondary'>" +
@@ -465,6 +297,7 @@
             "</p>"; // Дата
           html += "<p class='card-text'>" + row[3] + "</p>"; // Комментарий
 
+          html += "<div class='mt-auto'>"; // Контейнер для кнопки
           // Проверяем наличие ссылки на скачивание
           if (row[4]) {
             // Если ссылка есть, создаем кнопку с иконкой
@@ -481,6 +314,7 @@
             // Если ссылки нет, просто добавляем текст без кнопки
             html += "<span class='card-link'>" + row[4] + "</span>";
           }
+          html += "</div>"; // Конец контейнера для кнопки
 
           html += "</div>";
           html += "</div>";
